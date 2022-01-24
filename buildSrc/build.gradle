@@ -4,7 +4,8 @@ apply plugin: 'com.novoda.bintray-release'
 
 buildscript {
     repositories {
-        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
     }
     dependencies {
         classpath 'com.novoda:bintray-release:0.8.0'
@@ -12,8 +13,9 @@ buildscript {
 }
 
 repositories {
+    maven { url 'https://maven.aliyun.com/repository/jcenter' }
+    maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
-    jcenter()
     google()
 }
 
@@ -21,7 +23,7 @@ dependencies {
     implementation gradleApi()
     implementation localGroovy()
     implementation 'com.squareup:javapoet:1.9.0'
-    implementation 'com.android.tools.build:gradle:3.0.1'
+    implementation 'com.android.tools.build:gradle:3.1.0'
 }
 
 sourceCompatibility = "1.8"
